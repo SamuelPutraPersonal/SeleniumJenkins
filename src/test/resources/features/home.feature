@@ -1,6 +1,6 @@
-Feature: Google Search
+Feature: HRM Orange web page
 
-  Scenario: Search for a term
-    Given I open the Google homepage
-    When I search for "Selenium Jenkins"
-    Then I should see results related to "Selenium Jenkins"
+  Scenario: Login with Orange HRM page
+    Given I open the Orange HRM homepage
+    When I add username and password
+    Then Verify user can see the hrm logo

@@ -8,19 +8,21 @@ import org.openqa.selenium.support.PageFactory;
 public class HomePage {
     WebDriver driver;
 
-    @FindBy(name = "q")
-    private WebElement searchBox;
-
-    @FindBy(name = "btnK")
-    private WebElement searchButton;
-
     public HomePage(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
     }
 
-    public void search(String query) {
-        searchBox.sendKeys(query);
-        searchButton.click();
-    }
+    @FindBy(xpath = "//input[@placeholder='Username']")
+    public WebElement userName;
+
+    @FindBy(xpath = "//input[@placeholder='Password']")
+    public WebElement password;
+
+    @FindBy(xpath = "//button[@type='submit']")
+    public WebElement loginButton;
+
+    @FindBy(xpath = "//img[@alt='client brand banner']")
+    public  WebElement hrmLogo;
+
 }
